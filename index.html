@@ -1,28 +1,21 @@
 <!doctype html>
 <html lang="en">
-
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-
   <title>Why Am I So Exhausted All the Time? A 2-Minute Self-Check</title>
-
-  <!-- MailerLite Universal -->
-  <script>
-  (function(w,d,e,u,f,l,n){w[f]=w[f]||function(){(w[f].q=w[f].q||[])
-  .push(arguments);},l=d.createElement(e),l.async=1,
-  l.src=u,n=d.getElementsByTagName(e)[0],n.parentNode.insertBefore(l,n);})
-  (window,document,'script','https://assets.mailerlite.com/js/universal.js','ml');
-  ml('account', '1527840');
-  </script>
-
-</head>
-
-<body>
-
   <meta name="description" content="A private 2-minute self-check to understand whether your exhaustion is physical fatigue, burnout, self-worth strain, or a mix. Instant results. No login." />
   <meta name="robots" content="index,follow" />
   <link rel="canonical" href="https://whyamisoexhausted.com/" />
+
+  <!-- MailerLite Universal -->
+  <script>
+    (function(w,d,e,u,f,l,n){w[f]=w[f]||function(){(w[f].q=w[f].q||[])
+    .push(arguments);},l=d.createElement(e),l.async=1,
+    l.src=u,n=d.getElementsByTagName(e)[0],n.parentNode.insertBefore(l,n);})
+    (window,document,'script','https://assets.mailerlite.com/js/universal.js','ml');
+    ml('account', '1527840');
+  </script>
 
   <style>
     :root { --bg:#0b0c10; --card:#12131a; --text:#f3f4f6; --muted:#a7aab3; --line:#242634; }
@@ -77,7 +70,6 @@
       <div class="divider"></div>
 
       <form id="quiz" autocomplete="off">
-        <!-- A: Physical Fatigue -->
         <div class="q" data-cat="A">
           <h3>1) I wake up tired even after sleeping.</h3>
           <div class="options">
@@ -118,7 +110,6 @@
           </div>
         </div>
 
-        <!-- B: Burnout -->
         <div class="q" data-cat="B">
           <h3>5) Small tasks feel overwhelming.</h3>
           <div class="options">
@@ -159,7 +150,6 @@
           </div>
         </div>
 
-        <!-- C: Self-Worth Strain -->
         <div class="q" data-cat="C">
           <h3>9) I feel guilty when I rest.</h3>
           <div class="options">
@@ -210,27 +200,21 @@
 
         <div id="result" class="result hidden" aria-live="polite"></div>
 
-       <div id="optin" class="result hidden">
-  <h2>Want gentle next steps based on your result?</h2>
-<p>Get the <strong>7 Days of Seeing Yourself</strong> reset plan — simple, calming, and made for tired hearts.</p>
+        <div id="optin" class="result hidden">
+          <h2>Want gentle next steps based on your result?</h2>
+          <p>Get the <strong>7 Days of Seeing Yourself</strong> reset plan — simple, calming, and made for tired hearts.</p>
 
-<div style="text-align:center; margin:20px 0;">
-  <div class="ml-embedded" data-form="Aatnxz"></div>
-</div>
+          <p style="text-align:center; margin:12px 0 16px 0; font-weight:500;">
+            You don’t have to keep carrying this.
+          </p>
 
-<p class="tiny">No spam. No pressure. Just something to help you breathe again.</p>
+          <div style="text-align:center; margin:20px 0;">
+            <div class="ml-embedded" data-form="Aatnxz"></div>
+          </div>
 
-<p style="text-align:center; margin-bottom:10px;">
-  You don’t have to keep carrying this.
-</p>
-
-<div style="text-align:center; margin:16px 0;">
-  <div class="ml-embedded" data-form="Aatnxz"></div>
-</div>
-
-<p style="opacity:0.6; font-size:14px; margin-top:12px; text-align:center;">
-  No spam. No pressure. Just something to help you breathe again.
-</p>
+          <p style="opacity:0.6; font-size:14px; margin-top:12px; text-align:center;">
+            No spam. No pressure. Just something to help you breathe again.
+          </p>
         </div>
 
         <div class="footer">
@@ -255,7 +239,7 @@
       }
       answeredEl.textContent = count;
       bar.style.width = `${(count / 12) * 100}%`;
-      hint.textContent = count === 12 ? "Ready. Click “Get my result.”" : "Answer all 12 to unlock your result.";
+      hint.textContent = count === 12 ? 'Ready. Click "Get my result."' : 'Answer all 12 to unlock your result.';
       return count;
     }
 
@@ -276,47 +260,45 @@
     function renderResult(title, toneLine, bullets, nextSteps) {
       const bulletsHtml = bullets.map(b => `<li>${b}</li>`).join('');
       const stepsHtml = nextSteps.map(s => `<li>${s}</li>`).join('');
-     resultBox.innerHTML = `
-  <p class="tiny"><strong>Here’s what your exhaustion may actually be pointing to:</strong></p>
-  <h2>${title}</h2>
-  <p>${toneLine}</p>
-  <div class="divider"></div>
-  <p><b>What this can mean:</b></p>
+      resultBox.innerHTML = `
+        <p class="tiny"><strong>Here’s what your exhaustion may actually be pointing to:</strong></p>
+        <h2>${title}</h2>
+        <p>${toneLine}</p>
+        <div class="divider"></div>
+        <p><b>What this can mean:</b></p>
         <ul class="bullets">${bulletsHtml}</ul>
         <p style="margin-top:12px;"><b>Try this in the next 24 hours:</b></p>
         <ul class="bullets">${stepsHtml}</ul>
       `;
       resultBox.classList.remove('hidden');
       optinBox.classList.remove('hidden');
-      resultBox.scrollIntoView({ behavior: "smooth", block: "start" });
+      resultBox.scrollIntoView({ behavior: 'smooth', block: 'start' });
     }
 
     document.getElementById('calc').addEventListener('click', () => {
       if (countAnswered() !== 12) return;
 
-      const A = sumRange(1,4);   // physical
-      const B = sumRange(5,8);   // burnout
-      const C = sumRange(9,12);  // self-worth strain
+      const A = sumRange(1,4);
+      const B = sumRange(5,8);
+      const C = sumRange(9,12);
 
-      // Determine top category; detect "mixed" if within 2 points
       const scores = [{k:'A',v:A},{k:'B',v:B},{k:'C',v:C}].sort((x,y)=>y.v-x.v);
       const top = scores[0], second = scores[1];
-
       const isMixed = (top.v - second.v) <= 2 && top.v >= 6 && second.v >= 6;
 
       if (isMixed) {
         renderResult(
-          "Mixed Pattern: Depletion + Overextension",
-          "Your answers suggest you’re running on an empty tank while still carrying too much. That’s not a character flaw — it’s a nervous system waving a flag.",
+          'Mixed Pattern: Depletion + Overextension',
+          'Your answers suggest you’re running on an empty tank while still carrying too much. That’s not a character flaw — it’s a nervous system waving a flag.',
           [
-            "You may be depleted physically and emotionally at the same time.",
-            "You may be recovering slower because your load hasn’t changed.",
-            "Your rest might be interrupted by guilt, pressure, or constant “mental tabs.”"
+            'You may be depleted physically and emotionally at the same time.',
+            'You may be recovering slower because your load hasn’t changed.',
+            'Your rest might be interrupted by guilt, pressure, or constant “mental tabs.”'
           ],
           [
-            "Reduce one nonessential obligation today (just one).",
-            "Take a 20-minute real break: no scrolling, no fixing, no proving.",
-            "Say one boundary sentence: “I can’t do that today.” (No explanation.)"
+            'Reduce one nonessential obligation today (just one).',
+            'Take a 20-minute real break: no scrolling, no fixing, no proving.',
+            'Say one boundary sentence: “I can’t do that today.” (No explanation.)'
           ]
         );
         return;
@@ -324,17 +306,17 @@
 
       if (top.k === 'A') {
         renderResult(
-          "Physical Fatigue Pattern",
-          "Your answers lean toward physical depletion — the kind that sleep alone doesn’t always fix.",
+          'Physical Fatigue Pattern',
+          'Your answers lean toward physical depletion — the kind that sleep alone doesn’t always fix.',
           [
-            "Your body may need steady recovery, not just more pushing.",
-            "Hydration, nutrition, sleep quality, and stress hormones can all play a role.",
-            "If this is persistent or worsening, consider a check-in with a licensed professional."
+            'Your body may need steady recovery, not just more pushing.',
+            'Hydration, nutrition, sleep quality, and stress hormones can all play a role.',
+            'If this is persistent or worsening, consider a check-in with a licensed professional.'
           ],
           [
-            "Drink water + eat something with protein within the next 2 hours.",
-            "Take a 10-minute walk or stretch to reset your body’s signal.",
-            "Track sleep + energy for 7 days (simple notes are enough)."
+            'Drink water + eat something with protein within the next 2 hours.',
+            'Take a 10-minute walk or stretch to reset your body’s signal.',
+            'Track sleep + energy for 7 days (simple notes are enough).'
           ]
         );
         return;
@@ -342,34 +324,34 @@
 
       if (top.k === 'B') {
         renderResult(
-          "Burnout Pattern",
-          "Your answers lean toward prolonged stress without enough recovery — burnout isn’t weakness; it’s overload.",
+          'Burnout Pattern',
+          'Your answers lean toward prolonged stress without enough recovery — burnout isn’t weakness; it’s overload.',
           [
-            "Small tasks may feel heavy because your capacity is stretched thin.",
-            "You might feel detached or numb as a protective response.",
-            "Rest may not restore you if the stressor stays constant."
+            'Small tasks may feel heavy because your capacity is stretched thin.',
+            'You might feel detached or numb as a protective response.',
+            'Rest may not restore you if the stressor stays constant.'
           ],
           [
-            "Delete or delay one task today that isn’t essential.",
-            "Ask for help with one thing — even if it’s small.",
-            "Schedule a 30-minute recovery block (no productivity allowed)."
+            'Delete or delay one task today that isn’t essential.',
+            'Ask for help with one thing — even if it’s small.',
+            'Schedule a 30-minute recovery block (no productivity allowed).'
           ]
         );
         return;
       }
 
       renderResult(
-        "Self-Worth Strain Pattern",
-        "Your answers lean toward exhaustion fueled by over-performing, people-pleasing, or earning safety through usefulness.",
+        'Self-Worth Strain Pattern',
+        'Your answers lean toward exhaustion fueled by over-performing, people-pleasing, or earning safety through usefulness.',
         [
-          "You may be carrying emotional labor that no one sees.",
-          "Guilt may be stealing the healing from your rest.",
-          "You may be betraying your needs to avoid disappointing others."
+          'You may be carrying emotional labor that no one sees.',
+          'Guilt may be stealing the healing from your rest.',
+          'You may be betraying your needs to avoid disappointing others.'
         ],
         [
-          "Pick one boundary sentence and use it today: “I can’t commit to that.”",
-          "Rest once without explaining why. Just rest.",
-          "Write 3 lines: “If I didn’t have to earn love, I would…”"
+          'Pick one boundary sentence and use it today: “I can’t commit to that.”',
+          'Rest once without explaining why. Just rest.',
+          'Write 3 lines: “If I didn’t have to earn love, I would…”'
         ]
       );
     });
@@ -379,8 +361,8 @@
       resultBox.classList.add('hidden');
       optinBox.classList.add('hidden');
       countAnswered();
-      window.scrollTo({ top: 0, behavior: "smooth" });
+      window.scrollTo({ top: 0, behavior: 'smooth' });
     });
- 
+  </script>
 </body>
 </html>
