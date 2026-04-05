@@ -6,7 +6,7 @@
   <title>Why Am I So Exhausted All the Time? A 2-Minute Self-Check</title>
   <meta name="description" content="A private 2-minute self-check to understand whether your exhaustion is physical fatigue, burnout, self-worth strain, or a mix. Instant results. No login." />
   <meta name="robots" content="index,follow" />
-  <link rel="canonical" href="https://YOURDOMAIN.com/" />
+  <link rel="canonical" href="https://whyamisoexhausted.com/" />
 
   <style>
     :root { --bg:#0b0c10; --card:#12131a; --text:#f3f4f6; --muted:#a7aab3; --line:#242634; }
@@ -194,11 +194,11 @@
 
         <div id="result" class="result hidden" aria-live="polite"></div>
 
-        <div id="optin" class="result hidden">
-          <h2>Want a 7-day reset based on your result?</h2>
-          <p>Get the “7 Days of Seeing Yourself” reset plan — gentle, practical, and designed for tired hearts.</p>
-          <!-- Replace this with your MailerLite (or other) embed code later -->
-          <div class="tiny">Drop your email form embed here (after you set it up).</div>
+       <div id="optin" class="result hidden">
+  <h2>Want gentle next steps based on your result?</h2>
+  <p>Get the <strong>7 Days of Seeing Yourself</strong> reset plan — simple, calming, and made for tired hearts.</p>
+  <p class="tiny">Your email form will go here once you create it in MailerLite.</p>
+</div>
         </div>
 
         <div class="footer">
@@ -244,11 +244,12 @@
     function renderResult(title, toneLine, bullets, nextSteps) {
       const bulletsHtml = bullets.map(b => `<li>${b}</li>`).join('');
       const stepsHtml = nextSteps.map(s => `<li>${s}</li>`).join('');
-      resultBox.innerHTML = `
-        <h2>${title}</h2>
-        <p>${toneLine}</p>
-        <div class="divider"></div>
-        <p><b>What this can mean:</b></p>
+     resultBox.innerHTML = `
+  <p class="tiny"><strong>Here’s what your exhaustion may actually be pointing to:</strong></p>
+  <h2>${title}</h2>
+  <p>${toneLine}</p>
+  <div class="divider"></div>
+  <p><b>What this can mean:</b></p>
         <ul class="bullets">${bulletsHtml}</ul>
         <p style="margin-top:12px;"><b>Try this in the next 24 hours:</b></p>
         <ul class="bullets">${stepsHtml}</ul>
