@@ -409,31 +409,41 @@
       </form>
 
       <div id="optin" class="result hidden">
-        <h2>Want gentle next steps based on your result?</h2>
-        <p>Get the <strong>7 Days of Seeing Yourself</strong> reset plan — simple, calming, and made for tired hearts.</p>
+  <h2>Want gentle next steps based on your result?</h2>
+  <p>Get the <strong>7 Days of Seeing Yourself</strong> reset plan — simple, calming, and made for tired hearts.</p>
 
-        <div class="optin-form">
-          <h3>Start your 7-day reset</h3>
-          <p>For when you're tired... but can’t explain why.</p>
+  <div class="optin-form" id="optinFormWrap">
+    <h3>Start your 7-day reset</h3>
+    <p>For when you're tired... but can’t explain why.</p>
 
-          <form action="https://assets.mailerlite.com/jsonp/1527840/forms/183883494840076196/subscribe" method="post" target="_blank">
-            <input
-              type="email"
-              name="fields[email]"
-              placeholder="Your email (where I’ll send it)"
-              autocomplete="email"
-              required
-            />
+    <form
+      action="https://assets.mailerlite.com/jsonp/1527840/forms/183883494840076196/subscribe"
+      method="post"
+      target="ml-hidden-frame"
+      onsubmit="showOptinSuccess()"
+    >
+      <input
+        type="email"
+        name="fields[email]"
+        placeholder="Your email (where I’ll send it)"
+        autocomplete="email"
+        required
+      />
 
-            <input type="hidden" name="ml-submit" value="1" />
-            <input type="hidden" name="anticsrf" value="true" />
+      <input type="hidden" name="ml-submit" value="1" />
+      <input type="hidden" name="anticsrf" value="true" />
 
-            <button type="submit">Send me the reset</button>
-          </form>
-        </div>
-      </div>
-    </div>
+      <button type="submit">Send me the reset</button>
+    </form>
   </div>
+
+  <div id="optinSuccess" class="optin-form hidden">
+    <h3>You’re in.</h3>
+    <p>Please check your inbox for your reset. If you don’t see it in a few minutes, check spam or promotions.</p>
+  </div>
+
+  <iframe name="ml-hidden-frame" style="display:none;"></iframe>
+</div>
 
   <script>
     const quiz = document.getElementById('quiz');
@@ -574,6 +584,17 @@
       countAnswered();
       window.scrollTo({ top: 0, behavior: 'smooth' });
     });
+	function showOptinSuccess() {
+  setTimeout(() => {
+    const formWrap = document.getElementById('optinFormWrap');
+    const successWrap = document.getElementById('optinSuccess');
+    if (formWrap && successWrap) {
+      formWrap.classList.add('hidden');
+      successWrap.classList.remove('hidden');
+    }
+  }, 500);
+}
+
   </script>
 </body>
 </html>
